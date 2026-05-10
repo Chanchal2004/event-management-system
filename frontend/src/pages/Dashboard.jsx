@@ -4,7 +4,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { TopNav } from 'components/layout/TopNav';
 import { EventCard } from 'components/events/EventCard';
 import { EventFilters } from 'components/events/EventFilters';
-import { eventApi } from 'lib/api';
+import { eventApi } from '../lib/api';
 import { Calendar, TrendingUp, Users, MapPin } from 'lucide-react';
 import { Skeleton } from 'components/ui/skeleton';
 
