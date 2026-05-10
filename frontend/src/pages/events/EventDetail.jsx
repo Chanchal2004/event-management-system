@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { useAuth } from 'context/AuthContext';
-import { eventApi, registrationApi, reviewApi } from '../lib/api';
+import { eventApi, registrationApi, reviewApi } from '../../lib/api';
 import { TopNav } from 'components/layout/TopNav';
 import { Button } from 'components/ui/button';
 import { Badge } from 'components/ui/badge';
