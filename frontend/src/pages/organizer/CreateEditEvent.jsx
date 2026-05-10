@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { eventApi, uploadApi } from 'lib/api';
+import { eventApi, uploadApi } from '../../lib/api';
 import { TopNav } from 'components/layout/TopNav';
 import { Card, CardContent, CardHeader, CardTitle } from 'components/ui/card';
 import { Button } from 'components/ui/button';
