@@ -187,7 +187,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { QRCodeSVG } from 'qrcode.react';
-import { registrationApi, eventApi } from '../lib/api';
+import { registrationApi, eventApi } from '../../lib/api';
 import { TopNav } from 'components/layout/TopNav';
 import { Badge } from 'components/ui/badge';
 import { Skeleton } from 'components/ui/skeleton';
