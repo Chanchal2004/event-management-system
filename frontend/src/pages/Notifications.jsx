@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { notificationApi } from 'lib/api';
+import { notificationApi } from '../lib/api';
 import { TopNav } from 'components/layout/TopNav';
 import { Card, CardContent } from 'components/ui/card';
 import { Button } from 'components/ui/button';
