@@ -1,0 +1,59 @@
+/* App specific styles */
+
+.main-content {
+    margin-left: 256px;
+    min-height: 100vh;
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        margin-left: 0;
+    }
+}
+
+/* QR Code styling */
+.qr-ticket {
+    @apply bg-white p-6 rounded-xl border-2 border-dashed border-blue-300;
+}
+
+/* Event banner placeholder */
+.event-banner-placeholder {
+    @apply bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center;
+}
+
+/* Rating stars */
+.star-filled {
+    @apply text-yellow-400;
+}
+
+.star-empty {
+    @apply text-slate-300;
+}
+
+/* Notification badge */
+.notification-badge {
+    @apply absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-white text-xs rounded-full flex items-center justify-center;
+}
+
+/* Loading skeleton */
+.skeleton {
+    @apply bg-slate-200 animate-pulse rounded;
+}
+
+/* Empty state */
+.empty-state {
+    @apply text-center py-16 text-slate-500;
+}
+
+/* Seats indicator */
+.seats-full {
+    @apply text-red-600 font-semibold;
+}
+
+.seats-low {
+    @apply text-orange-500 font-semibold;
+}
+
+.seats-available {
+    @apply text-green-600 font-semibold;
+}

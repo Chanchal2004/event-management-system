@@ -1,0 +1,386 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    margin: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: 'JetBrains Mono', source-code-pro, Menlo, Monaco, Consolas, monospace;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Barlow Condensed', sans-serif;
+}
+
+@layer base {
+    :root {
+        --background: 244 30% 8%;
+        --foreground: 240 20% 95%;
+        --card: 244 28% 12%;
+        --card-foreground: 240 20% 95%;
+        --popover: 244 28% 10%;
+        --popover-foreground: 240 20% 95%;
+        --primary: 280 90% 65%;
+        --primary-foreground: 0 0% 100%;
+        --secondary: 244 25% 18%;
+        --secondary-foreground: 240 20% 85%;
+        --muted: 244 25% 16%;
+        --muted-foreground: 240 15% 55%;
+        --accent: 300 80% 60%;
+        --accent-foreground: 0 0% 100%;
+        --destructive: 0 84% 60%;
+        --destructive-foreground: 0 0% 100%;
+        --border: 244 25% 20%;
+        --input: 244 25% 18%;
+        --ring: 280 90% 65%;
+        --chart-1: 280 90% 65%;
+        --chart-2: 160 60% 45%;
+        --chart-3: 30 80% 55%;
+        --chart-4: 300 65% 60%;
+        --chart-5: 340 75% 55%;
+        --radius: 0.5rem;
+        --success: 142 76% 36%;
+        --warning: 38 92% 50%;
+
+        /* Custom dark purple theme vars */
+        --bg-primary: #0f0e1a;
+        --bg-secondary: #16152a;
+        --bg-card: #1a1930;
+        --bg-card-hover: #1f1e38;
+        --border-subtle: rgba(139, 92, 246, 0.15);
+        --border-glow: rgba(139, 92, 246, 0.4);
+        --purple-primary: #8b5cf6;
+        --purple-bright: #a78bfa;
+        --pink-accent: #ec4899;
+        --blue-accent: #60a5fa;
+        --text-primary: #f0eeff;
+        --text-secondary: #a09cc0;
+        --text-muted: #6b6890;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+    }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-glow);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--purple-primary);
+}
+
+/* ── SIDEBAR ── */
+.sidebar {
+    background: var(--bg-secondary);
+    border-right: 1px solid var(--border-subtle);
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 256px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 16px;
+    color: var(--text-secondary);
+    border-radius: 10px;
+    margin: 2px 8px;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+.sidebar-link:hover {
+    background: rgba(139, 92, 246, 0.12);
+    color: var(--purple-bright);
+}
+
+.sidebar-link.active {
+    background: rgba(139, 92, 246, 0.18);
+    color: var(--purple-bright);
+    font-weight: 500;
+    box-shadow: inset 3px 0 0 var(--purple-primary);
+}
+
+/* ── CARD ── */
+.event-card {
+    background: var(--bg-card);
+    border-radius: 14px;
+    border: 1px solid var(--border-subtle);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.event-card:hover {
+    border-color: var(--border-glow);
+    box-shadow: 0 8px 32px rgba(139, 92, 246, 0.15);
+    transform: translateY(-3px);
+}
+
+/* ── STATUS BADGES ── */
+.status-upcoming {
+    background: rgba(139, 92, 246, 0.2);
+    color: var(--purple-bright);
+    border: 1px solid rgba(139, 92, 246, 0.35);
+}
+
+.status-ongoing {
+    background: rgba(52, 211, 153, 0.15);
+    color: #6ee7b7;
+    border: 1px solid rgba(52, 211, 153, 0.3);
+}
+
+.status-completed {
+    background: rgba(148, 163, 184, 0.1);
+    color: #94a3b8;
+    border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+/* ── GLASS HEADER ── */
+.glass-header {
+    background: rgba(15, 14, 26, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+/* ── STATS CARDS override ── */
+.stat-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 14px;
+    transition: border-color 0.2s;
+}
+.stat-card:hover {
+    border-color: var(--border-glow);
+}
+
+/* ── FORM INPUTS ── */
+input, textarea, select {
+    background: var(--bg-secondary) !important;
+    border-color: var(--border-subtle) !important;
+    color: var(--text-primary) !important;
+}
+
+input::placeholder, textarea::placeholder {
+    color: var(--text-muted) !important;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: var(--purple-primary) !important;
+    box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.25) !important;
+}
+
+/* ── NOTIFICATION BADGE ── */
+.notification-badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    width: 18px;
+    height: 18px;
+    background: linear-gradient(135deg, var(--purple-primary), var(--pink-accent));
+    color: white;
+    font-size: 0.65rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+/* ── LOADING SKELETON ── */
+.skeleton {
+    background: linear-gradient(90deg, var(--bg-card) 25%, var(--bg-card-hover) 50%, var(--bg-card) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 8px;
+}
+
+@keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* ── EMPTY STATE ── */
+.empty-state {
+    text-align: center;
+    padding: 64px 0;
+    color: var(--text-muted);
+}
+
+/* ── SEATS ── */
+.seats-full { color: #f87171; font-weight: 600; }
+.seats-low { color: #fb923c; font-weight: 600; }
+.seats-available { color: #4ade80; font-weight: 600; }
+
+/* ── QR TICKET ── */
+.qr-ticket {
+    background: var(--bg-card);
+    padding: 24px;
+    border-radius: 14px;
+    border: 2px dashed rgba(139, 92, 246, 0.35);
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 0.35s ease-out forwards;
+}
+
+.stagger-1 { animation-delay: 0.07s; }
+.stagger-2 { animation-delay: 0.14s; }
+.stagger-3 { animation-delay: 0.21s; }
+.stagger-4 { animation-delay: 0.28s; }
+
+/* ── BUTTON ACTIVE ── */
+button:active { transform: scale(0.97); }
+
+/* ── SHADCN COMPONENT OVERRIDES ── */
+/* Cards */
+.bg-white {
+    background-color: var(--bg-card) !important;
+}
+
+/* borders */
+.border-slate-200 {
+    border-color: var(--border-subtle) !important;
+}
+.border-slate-100 {
+    border-color: var(--border-subtle) !important;
+}
+
+/* text overrides */
+.text-slate-800 { color: var(--text-primary) !important; }
+.text-slate-700 { color: var(--text-primary) !important; }
+.text-slate-600 { color: var(--text-secondary) !important; }
+.text-slate-500 { color: var(--text-muted) !important; }
+.text-slate-400 { color: var(--text-muted) !important; }
+
+/* icon bg circles in stat cards */
+.bg-blue-100   { background: rgba(96, 165, 250, 0.12) !important; }
+.bg-green-100  { background: rgba(74, 222, 128, 0.12) !important; }
+.bg-purple-100 { background: rgba(139, 92, 246, 0.12) !important; }
+.bg-orange-100 { background: rgba(251, 146, 60, 0.12) !important; }
+
+.text-blue-600   { color: #60a5fa !important; }
+.text-green-600  { color: #4ade80 !important; }
+.text-purple-600 { color: #a78bfa !important; }
+.text-orange-600 { color: #fb923c !important; }
+
+/* Primary button */
+.bg-blue-600 {
+    background: linear-gradient(135deg, var(--purple-primary), var(--pink-accent)) !important;
+    border: none !important;
+}
+.bg-blue-600:hover, .hover\:bg-blue-700:hover {
+    background: linear-gradient(135deg, #7c3aed, #db2777) !important;
+    opacity: 1 !important;
+}
+
+/* bg-slate-50 panels */
+.bg-slate-50 {
+    background: var(--bg-secondary) !important;
+}
+.hover\:bg-slate-50:hover {
+    background: rgba(139, 92, 246, 0.08) !important;
+}
+
+/* Table */
+.border-b {
+    border-color: var(--border-subtle) !important;
+}
+
+/* Blue tinted badge bg */
+.bg-blue-50  { background: rgba(139, 92, 246, 0.12) !important; }
+.text-blue-700 { color: var(--purple-bright) !important; }
+
+/* Green registered badge */
+.bg-green-50  { background: rgba(74, 222, 128, 0.08) !important; }
+.text-green-600 { color: #4ade80 !important; }
+
+/* red cancel */
+.text-red-600 { color: #f87171 !important; }
+.hover\:bg-red-50:hover { background: rgba(248, 113, 113, 0.08) !important; }
+
+/* Dropdown / popover */
+[data-radix-popper-content-wrapper] > div,
+[role="dialog"],
+[data-radix-dropdown-menu-content] {
+    background: var(--bg-card) !important;
+    border-color: var(--border-subtle) !important;
+    color: var(--text-primary) !important;
+}
+
+/* Select content */
+[role="listbox"] {
+    background: var(--bg-card) !important;
+    border-color: var(--border-subtle) !important;
+}
+[role="option"]:hover {
+    background: rgba(139, 92, 246, 0.15) !important;
+}
+
+/* Calendar popover */
+.rdp {
+    background: var(--bg-card) !important;
+    color: var(--text-primary) !important;
+}
+
+/* Location type radio cards */
+.peer-data-\[state\=checked\]\:border-blue-600 {
+    border-color: var(--purple-primary) !important;
+}
+.peer-data-\[state\=checked\]\:bg-blue-50 {
+    background: rgba(139, 92, 246, 0.12) !important;
+}
+
+/* Outline buttons */
+.border-input {
+    border-color: var(--border-subtle) !important;
+    background: var(--bg-secondary) !important;
+    color: var(--text-primary) !important;
+}
+
+@layer base {
+    [data-debug-wrapper="true"] {
+        display: contents !important;
+    }
+}

@@ -1,0 +1,15 @@
+fastapi
+uvicorn
+python-multipart
+python-dotenv
+motor
+pymongo
+passlib[bcrypt]
+python-jose
+PyJWT
+email-validator
+bcrypt
+qrcode
+pillow
+aiofiles
+resend

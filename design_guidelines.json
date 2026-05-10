@@ -1,0 +1,181 @@
+{
+  "project_name": "EventMaster Pro",
+  "design_philosophy": {
+    "identity": "E1: The Anti-AI Designer",
+    "core_principles": [
+      "Fusion over Imitation: Mix Swiss typography with SaaS functional density.",
+      "Emotion First: The dashboard should feel 'Efficient' and 'In Control'.",
+      "Content is King: Event banners and data take precedence over UI chrome.",
+      "Negative Space: Use generous padding (p-6, p-8) inside containers.",
+      "Contrast: High contrast for text, subtle contrast for structural borders."
+    ]
+  },
+  "typography": {
+    "font_family": {
+      "headings": "Barlow Condensed, sans-serif",
+      "body": "Inter, sans-serif",
+      "mono": "JetBrains Mono, monospace"
+    },
+    "scale": {
+      "h1": "text-4xl md:text-5xl font-bold tracking-tight",
+      "h2": "text-3xl font-semibold tracking-tight",
+      "h3": "text-2xl font-semibold tracking-normal",
+      "p": "text-base leading-relaxed text-slate-600",
+      "small": "text-sm font-medium text-slate-500 uppercase tracking-wider"
+    },
+    "import_instruction": "Add this to index.html or import in CSS: @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono&display=swap');"
+  },
+  "colors": {
+    "theme_mode": "light",
+    "palette": {
+      "primary": {
+        "DEFAULT": "#2563eb",
+        "hover": "#1d4ed8",
+        "foreground": "#ffffff"
+      },
+      "secondary": {
+        "DEFAULT": "#f1f5f9",
+        "foreground": "#0f172a"
+      },
+      "accent": {
+        "DEFAULT": "#eff6ff",
+        "foreground": "#1e40af"
+      },
+      "background": {
+        "DEFAULT": "#f8fafc",
+        "paper": "#ffffff"
+      },
+      "text": {
+        "primary": "#0f172a",
+        "secondary": "#64748b",
+        "muted": "#94a3b8"
+      },
+      "border": {
+        "DEFAULT": "#e2e8f0",
+        "subtle": "#f1f5f9"
+      },
+      "success": "#10b981",
+      "warning": "#f59e0b",
+      "error": "#ef4444"
+    },
+    "gradients": {
+      "hero_overlay": "linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%)",
+      "primary_subtle": "linear-gradient(135deg, #eff6ff 0%, #ffffff 100%)"
+    }
+  },
+  "layout_strategy": {
+    "container": {
+      "max_width": "max-w-7xl",
+      "padding": "px-4 sm:px-6 lg:px-8",
+      "center": "mx-auto"
+    },
+    "grid_systems": {
+      "bento_dashboard": "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6",
+      "masonry_events": "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8",
+      "detail_page": "grid grid-cols-1 lg:grid-cols-12 gap-12"
+    },
+    "spacing": {
+      "section_gap": "py-16 md:py-24",
+      "component_gap": "space-y-6"
+    }
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 rounded-md transition-all duration-200 shadow-sm hover:shadow-md active:scale-95 font-medium",
+      "secondary": "bg-secondary text-secondary-foreground hover:bg-secondary/80 h-10 px-4 py-2 rounded-md transition-all duration-200 font-medium",
+      "outline": "border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 rounded-md transition-all duration-200 font-medium",
+      "ghost": "hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 rounded-md transition-all duration-200 font-medium"
+    },
+    "cards": {
+      "base": "bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow duration-300",
+      "hover_effect": "hover:-translate-y-1 transition-transform duration-300",
+      "internal_padding": "p-6"
+    },
+    "inputs": {
+      "base": "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+    }
+  },
+  "visual_enhancers": {
+    "shadows": {
+      "card": "0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)",
+      "floating": "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)"
+    },
+    "borders": {
+      "subtle": "1px solid #e2e8f0",
+      "active": "1px solid #2563eb"
+    },
+    "radius": {
+      "default": "0.5rem",
+      "large": "0.75rem",
+      "pill": "9999px"
+    }
+  },
+  "motion": {
+    "hover": "transition-all duration-200 ease-in-out",
+    "page_transition": {
+      "initial": { "opacity": 0, "y": 20 },
+      "animate": { "opacity": 1, "y": 0 },
+      "exit": { "opacity": 0, "y": -20 },
+      "transition": { "duration": 0.3 }
+    },
+    "list_stagger": 0.1
+  },
+  "universal_guidelines": [
+    "Do not use generic centered layouts. Use grid-based asymmetry.",
+    "Dark colors look good when used independently without gradients.",
+    "Create depth through layered design elements with z-index hierarchy.",
+    "Use glass-morphism effects (backdrop-blur-md) for sticky headers.",
+    "Interactive elements must have clear hover and focus states.",
+    "All interactive elements MUST include data-testid attribute.",
+    "Use 'sonner' for toast notifications.",
+    "Components must use named exports.",
+    "Pages must use default exports."
+  ],
+  "image_urls": {
+    "hero_banners": [
+      {
+        "url": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=2070&auto=format&fit=crop",
+        "description": "Crowd at a concert with confetti",
+        "category": "hero"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2070&auto=format&fit=crop",
+        "description": "Conference hall with people",
+        "category": "hero"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1505373877841-8d43a716668d?q=80&w=2070&auto=format&fit=crop",
+        "description": "Tech event presentation",
+        "category": "hero"
+      }
+    ],
+    "placeholders": [
+      {
+        "url": "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=2070&auto=format&fit=crop",
+        "description": "Generic event setup",
+        "category": "placeholder"
+      }
+    ],
+    "avatars": [
+      {
+        "url": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070&auto=format&fit=crop",
+        "description": "User avatar male",
+        "category": "avatar"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070&auto=format&fit=crop",
+        "description": "User avatar female",
+        "category": "avatar"
+      }
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Install 'lucide-react' for icons.",
+    "Install 'recharts' for the organizer analytics.",
+    "Use 'qrcode.react' for generating QR codes on the frontend.",
+    "Follow the 'Bento' grid layout for the dashboard.",
+    "Implement the 'Tracing Beam' effect on active event cards if possible, or a subtle glow border.",
+    "Use 'date-fns' for date formatting.",
+    "Ensure all forms use 'react-hook-form' with 'zod' validation."
+  ]
+}
