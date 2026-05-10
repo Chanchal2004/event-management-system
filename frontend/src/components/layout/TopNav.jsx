@@ -5,7 +5,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Bell, Search } from 'lucide-react';
 import { Input } from 'components/ui/input';
-import { notificationApi } from 'lib/api';
+import { notificationApi } from '../lib/api';
 import {
     DropdownMenu,
     DropdownMenuContent,
