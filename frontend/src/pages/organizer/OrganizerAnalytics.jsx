@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { analyticsApi } from 'lib/api';
+import { analyticsApi } from '../../lib/api';
 import { TopNav } from 'components/layout/TopNav';
 import { Card, CardContent, CardHeader, CardTitle } from 'components/ui/card';
 import { Skeleton } from 'components/ui/skeleton';
